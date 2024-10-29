@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="/css/reg2.css">
+</head>
+<body>
+<section class="container">
+    <div class="container__top">
+        <img class="logo-icon" src="/svg/speaker-icon.svg" alt="">
+        <span class="company-title">Car <br> Sound <br> Configurator</span>
+    </div>
+    <form action="/register" method="post">
+        <div class="section" id="infoInputs">
+            <input class="input" id="phone" type="text" name="phone" placeholder="Номер телефона" autocomplete="off">
+            <input class="input" id="email" type="text" name="email" placeholder="Почта" autocomplete="off">
+            <input class="input" id="password" type="password" name="password" placeholder="Пароль" autocomplete="off">
+        </div>
+        <div class="btns_wrapper">
+            <input type="submit" class="btn reg" id="regBtn" value="Регистрация">
+            <a class="btn login" href="/login">Вход</a>
+        </div>
+    </form>
+</section>
+</body>
+<script src="/js/regScript.js"></script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="/css/login2.css">
+</head>
+<body>
+<section class="container">
+    <div class="container__top">
+        <img class="logo-icon" src="/svg/speaker-icon.svg" alt="">
+        <span class="company-title">Car <br> Sound <br> Configurator</span>
+    </div>
+    <form action="/login" method="post">
+
+        <div class="section__inputs">
+            <input class="input" id="phone" name="phone" type="text" placeholder="Логин" autocomplete="off">
+            <input class="input" id="password" name="password" type="password" placeholder="Пароль" autocomplete="off">
+        </div>
+
+        <div class="section">
+
+        </div>
+        <div class="btns_wrapper">
+            <input type="submit" class="btn login" value="Вход">
+            <a class="btn return" href="/reg">Регистрация</a>
+        </div>
+    </form>
+</section>
+</body>
+<script src="/js/loginScript.js"></script>
+</html>

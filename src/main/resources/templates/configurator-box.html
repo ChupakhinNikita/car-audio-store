@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="/css/configurator-box.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <nav class="navbar">
+        <ul class="navbar__list">
+            <li class="navbar__item"><a href="/first"><img class="logo-icon" src="/svg/speaker-icon.svg" alt=""></a></li>
+            <li class="navbar__item"><a class="navbar__link" href="">Конфигуратор</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="">Новости</a></li>
+            <li class="navbar__item">
+                <div class="search-section">
+                    <input class="search-input" type="text" value="Название товара или артикул" id="search-value">
+                    <button class="search-btn">
+                        <img class="search-btn__icon" src="/svg/glass.svg" alt="">
+                    </button>
+                </div>
+            </li>
+            <li class="navbar__item"><a class="navbar__link-extra" href="#"><img src="../svg/cart.svg" alt=""></a></li>
+            <li class="navbar__item"><a class="navbar__link-extra" href="#"><img src="../svg/compare.svg" alt=""></a></li>
+            <li class="navbar__item"><a class="navbar__link" href="../login/login.html">Выйти</a></li>
+        </ul>
+    </nav>
+    <div class="switch-configurator">
+        <a class="switch-configurator__link" href="/configurator-box"><button style="background-color: #d66565;" class="switch-configurator__btn">Короб</button></a>
+        <a class="switch-configurator__link" href="/configurator-card"><button class="switch-configurator__btn">Карта</button></a>
+    </div>
+    <div class="build-card-wrapper">
+        <div class="build-card">
+            <div class="build">
+                <img class="subwoofer-img" src="/img/sub.png" id="subwooferImg" alt="">
+                <div class="workbench-panel">
+                    <h1 class="build-name">Название сборки #1</h1>
+                    <span class="build-price">9990₽</span>
+
+                    <span class="option-name">Кол-во сабвуферов</span>
+                    <div class="choice-wrapper">
+                        <input class="choice-btn" type="button" value="3">
+                        <input class="choice-btn" type="button" value="2">
+                        <input class="choice-btn choosen" type="button" value="1">
+                    </div>
+
+                    <span class="option-name">Материал короба</span>
+                    <div class="choice-wrapper">
+                        <input class="choice-btn" type="button" value="ДСП">
+                        <input class="choice-btn choosen" type="button" value="Фанера">
+                    </div>
+
+                    <span class="option-name">Размер динамиков</span>
+                    <div class="choice-wrapper">
+                        <input class="choice-btn" type="button" value="12">
+                        <input class="choice-btn" type="button" value="11">
+                        <input class="choice-btn choosen" type="button" value="10">
+                    </div>
+
+                    <span class="option-name">Отделка короба</span>
+                    <div class="choice-wrapper">
+                        <input class="choice-btn" type="button" value="Карпет">
+                        <input class="choice-btn choosen" type="button" value="Клей">
+                    </div>
+                </div>
+            </div>
+            <div class="card-btns-wrapper">
+                <button class="cart-btn">Добавить в корзину</button>
+                <button class="cart-btn">Добавить в сравнение</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/configurator-box.js"></script>
+</body>
+</html>

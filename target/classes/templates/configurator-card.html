@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="/css/configurator-card.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <nav class="navbar">
+        <ul class="navbar__list">
+            <li class="navbar__item"><a href="/first"><img class="logo-icon" src="../svg/speaker-icon.svg" alt=""></a></li>
+            <li class="navbar__item"><a class="navbar__link" href="">Конфигуратор</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="">Новости</a></li>
+            <li class="navbar__item">
+                <div class="search-section">
+                    <input class="search-input" type="text" value="Название товара или артикул" id="search-value">
+                    <button class="search-btn">
+                        <img class="search-btn__icon" src="/svg/glass.svg" alt="">
+                    </button>
+                </div>
+            </li>
+            <li class="navbar__item"><a class="navbar__link-extra" href="#"><img src="/svg/cart.svg" alt=""></a></li>
+            <li class="navbar__item"><a class="navbar__link-extra" href="#"><img src="/svg/compare.svg" alt=""></a></li>
+            <li class="navbar__item"><a class="navbar__link" href="/">Выйти</a></li>
+        </ul>
+    </nav>
+    <div class="switch-configurator">
+        <a class="switch-configurator__link" href="/configurator-box"><button class="switch-configurator__btn">Короб</button></a>
+        <a class="switch-configurator__link" href="/configurator-card"><button style="background-color: #d66565;" class="switch-configurator__btn">Карта</button></a>
+    </div>
+    <div class="build-card-wrapper">
+        <div class="build-card">
+            <div class="build">
+                <div class="speaker-place pos-1">1</div>
+                <div class="speaker-place pos-2">2</div>
+                <div class="speaker-place pos-3">3</div>
+                <img class="subwoofer-img" src="/img/sound-card.png" alt="">
+                <div class="workbench-panel">
+                    <h1 class="build-name">Название сборки #1</h1>
+                    <span class="build-price">0₽</span>
+                    <span class="option-name">Динамик #1</span>
+                    <input class="choice-btn" type="button" id="add-btn-1" value="Добавить +">
+                    <span class="option-name">Динамик #2</span>
+                    <input class="choice-btn" type="button" id="add-btn-2" value="Добавить +">
+                    <span class="option-name">Динамик #3</span>
+                    <input class="choice-btn" type="button" id="add-btn-3" value="Добавить +">
+                </div>
+            </div>
+            <div class="card-btns-wrapper">
+                <button class="cart-btn">Добавить в корзину</button>
+                <button class="cart-btn">Добавить в сравнение</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="speakers-wrapper" id="speakers-wrapper" style="display: none;">
+        <button class="speaker__add-btn" id="close-btn">Закрыть</button>
+        <div th:each="el : ${products}" class="speaker-card">
+            <img class="speaker__img" th:src="${el.pathToPic}" alt="">
+            <span class="speaker__name" th:text="${el.label}" id="speaker"></span>
+           <!-- <form action="/addSpeakerToCarCard" method="post">
+                <input type="hidden" th:value="${el.prodId}">
+                <button class="speaker__add-btn" id="add-speakers-btn">Добавить</button>
+            </form>-->
+            <button class="speaker__add-btn" id="add-speakers-btn">Добавить</button>
+        </div>
+    </div>
+    <!--<div class="speakers-wrapper" id="speakers-wrapper" style="display: none;">
+        <button class="speaker__add-btn" id="close-btn">Закрыть</button>
+        <div class="speaker-card">
+            <img class="speaker__img" src="/img/3.png" alt="">
+            <span class="speaker__name">Динамик #1</span>
+
+            <button class="speaker__add-btn">Добавить</button>
+        </div>
+        <div class="speaker-card">
+            <img class="speaker__img" src="/img/3.png" alt="">
+            <span class="speaker__name">Динамик #2</span>
+            <button class="speaker__add-btn">Добавить</button>
+        </div>
+        <div class="speaker-card">
+            <img class="speaker__img" src="/img/3.png" alt="">
+            <span class="speaker__name">Динамик #3</span>
+            <button class="speaker__add-btn">Добавить</button>
+        </div>
+        <div class="speaker-card">
+            <img class="speaker__img" src="/img/3.png" alt="">
+            <span class="speaker__name">Динамик #4</span>
+            <button class="speaker__add-btn">Добавить</button>
+        </div>
+        <div class="speaker-card">
+            <img class="speaker__img" src="/img/3.png" alt="">
+            <span class="speaker__name">Динамик #5</span>
+            <button class="speaker__add-btn">Добавить</button>
+        </div>
+        <div class="speaker-card">
+            <img class="speaker__img" src="/img/3.png" alt="">
+            <span class="speaker__name">Динамик #6</span>
+            <button class="speaker__add-btn">Добавить</button>
+        </div>
+        <div class="speaker-card">
+            <img class="speaker__img" src="/img/3.png" alt="">
+            <span class="speaker__name">Динамик #7</span>
+            <button class="speaker__add-btn">Добавить</button>
+        </div>
+        <div class="speaker-card">
+            <img class="speaker__img" src="/img/3.png" alt="">
+            <span class="speaker__name">Динамик #8</span>
+            <button class="speaker__add-btn">Добавить</button>
+        </div>
+    </div>-->
+</div>
+<script src="/js/configurator-card.js"></script>
+</body>
+</html>

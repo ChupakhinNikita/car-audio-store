@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="/css/first.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <nav class="navbar">
+        <ul class="navbar__list">
+            <li class="navbar__item"><a href="/first"><img class="logo-icon" src="/svg/speaker-icon.svg" alt=""></a></li>
+            <li class="navbar__item"><a class="navbar__link" href="/configurator-box">Конфигуратор</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="">Новости</a></li>
+            <li class="navbar__item">
+                <div class="search-section">
+                    <input class="search-input" type="text" value="Название товара или артикул" id="search-value">
+                    <button class="search-btn">
+                        <img class="search-btn__icon" src="/svg/glass.svg" alt="">
+                    </button>
+                </div>
+            </li>
+            <li class="navbar__item"><a class="navbar__link-extra" href="#"><img src="/svg/cart.svg" alt=""></a></li>
+            <li class="navbar__item"><a class="navbar__link-extra" href="#"><img src="/svg/compare.svg" alt=""></a></li>
+            <li class="navbar__item"><a class="navbar__link" href="/">Выйти</a></li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <div class="main__page">
+            <div class="top__page">
+                <ul class="main__list">
+                    <li class="main__item"><a class="main__link" href="#">Динамики</a></li>
+                    <li class="main__item"><a class="main__link" href="#">Мультимедиа</a></li>
+                    <li class="main__item"><a class="main__link" href="#">Усилители и процессоры</a></li>
+                    <li class="main__item"><a class="main__link" href="#">Короба и подиумы</a></li>
+                    <li class="main__item"><a class="main__link" href="#">Штатные решения</a></li>
+                    <li class="main__item"><a class="main__link" href="#">Кабеля и комплектующие</a></li>
+                    <li class="main__item"><a class="main__link" href="#">Вибро-шумоизоляция</a></li>
+                    <li class="main__item"><a class="main__link" href="#">Питание</a></li>
+                    <li class="main__item"><a class="main__link" href="#">Приборы и датчики</a></li>
+                </ul>
+                <img class="main__page__img" src="/img/create_your_box.png" alt="">
+                <ul class="main__list">
+                    <li class=""><a class="main__link" href="#">Видеообзоры</a></li>
+                    <li class=""><a class="main__link" href="#">Производители</a></li>
+                    <li class=""><a class="main__link" href="#">Конфигуратор</a></li>
+                    <li class=""><a class="main__link" href="#">Конфигуратор короба</a></li>
+                </ul>
+            </div>
+            <h1 class="main__page__title">Спецпредложения</h1>
+
+            <!--Сделать через thymeleaf перечисления вместо js!!!-->
+            <div class="cards">
+                <div th:each="el : ${products}">
+                    <div class="card">
+                        <div th:if="${el.oldPrice != 0 && el.oldPrice > el.price}">
+                            <div class="special-offer spec-bg-4"><span class="offer-text">Акция!</span></div>
+                        </div>
+                        <img class="card__img" th:src="${el.pathToPic}" alt="">
+                        <div class="card__info">
+                            <div class="card__info__left">
+                                <span class="card__name" th:text="${el.label}"></span>
+                                <div class="card__rating">
+                                    <img class="card__rating__icon" src="/svg/star.svg" alt="">
+                                    <span class="card__rating__value" th:text="${el.rating}"></span>
+                                </div>
+                            </div>
+                            <div class="card__info__right">
+                                <div th:if="${el.oldPrice != 0 && el.oldPrice > el.price}">
+                                    <s class="card__price-old" th:text="${el.oldPrice} + '₽'"></s>
+                                </div>
+                                <div th:unless="${el.oldPrice != 0 && el.oldPrice > el.price}">
+                                    <s class="card__price-old"></s>
+                                </div>
+
+                                <span class="card__price-new" th:text="${el.price} + '₽'"></span>
+                                <span class="card__btn">Купить</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/first.js"></script>
+</body>
+</html>

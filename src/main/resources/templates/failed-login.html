@@ -1,0 +1,132 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+    <link rel="stylesheet" href="/css/login2.css">
+    <style>
+        .notification {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 0, 0, 0.5); /* красный полупрозрачный фон */
+            padding: 50px;
+            color: white;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<section class="login">
+    <h1 class="login__title">Вход</h1>
+    <div class="login__section">
+        <form action="/login" method="post">
+            <div class="login__section__left">
+                <div class="login__section__left__inputs">
+                    <input class="login__section__left__inputs__input" id="phone" name="phone" type="text" placeholder="Номер телефона" autocomplete="off">
+                    <input class="login__section__left__inputs__input" id="password" name="password" type="text" placeholder="Пароль" autocomplete="off">
+                </div>
+                <input type="submit" class="login__section__left__btn" id="regBtn" value="Вход">
+                &lt;!&ndash;<a class="login__section__left__btn" href="/first">Вход</a>&ndash;&gt;
+            </div>
+            <div id="notification" class="notification">
+                <span class="close" onclick="closeNotification()">&times;</span>
+                <p>Неверно введён номер телефона или пароль!</p>
+            </div>
+        </form>
+        <hr class="login__section__divider">
+        <div class="login__section__right">
+            <h2 class="login__section__right__title">Быстрый вход через</h2>
+            <div class="login__section__right__icons">
+                <img class="login__section__right__icons__img" src="../svg/github.svg">
+                <img class="login__section__right__icons__img" src="../svg/vk.svg">
+                <img class="login__section__right__icons__img" src="../svg/microsoft.svg">
+            </div>
+            <p class="login__section__right__text">Если у вас еще нет аккаунта, зарегистрируйтесь</p>
+            <a class="login__section__right__btn" href="/reg">Регистрация</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="/css/login2.css">
+    <style>
+        .notification {
+            position: static;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 0, 0, 0.5); /* красный полупрозрачный фон */
+            padding: 50px;
+            color: white;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<section class="container">
+    <div class="container__top">
+        <img class="logo-icon" src="/svg/speaker-icon.svg" alt="">
+        <span class="company-title">Car <br> Sound <br> Configurator</span>
+    </div>
+    <form action="/login" method="post">
+
+        <div class="section__inputs">
+            <input class="input" id="phone" name="phone" type="text" placeholder="Логин" autocomplete="off">
+            <input class="input" id="password" name="password" type="password" placeholder="Пароль" autocomplete="off">
+        </div>
+
+        <div class="section">
+
+        </div>
+        <div class="btns_wrapper">
+            <input type="submit" class="btn login" value="Вход">
+            <a class="btn return" href="/reg">Регистрация</a>
+        </div>
+    </form>
+</section>
+</body>
+<footer>
+    <div id="notification" class="notification">
+        <span class="close" onclick="closeNotification()">&times;</span>
+        <p>Неверно введён номер телефона или пароль!</p>
+    </div>
+</footer>
+<script src="/js/loginScript.js"></script>
+</html>
+
+<script>
+    function closeNotification() {
+        var notification = document.getElementById("notification");
+        notification.style.display = "none";
+    }
+</script>
+
